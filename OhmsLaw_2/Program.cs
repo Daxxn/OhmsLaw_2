@@ -20,7 +20,7 @@ namespace OhmsLaw_2
             Resistor R1 = new Resistor("R1", 2,  2, 0,   2, 2);
             Resistor R2 = new Resistor("R2", 4,  2, 2,   1, 2);
             Resistor R3 = new Resistor("R3", 6,  1, 2,   1, 1);
-            Resistor R4 = new Resistor("R4", 6,  0, 2,   0, 1);
+            Resistor R4 = new Resistor("R4", 6,  0, 2,   0, 0);
             
             Wire W1 = new Wire(0, 1, 0, 0);
             Wire W2 = new Wire(1, 2, 0, 2);
