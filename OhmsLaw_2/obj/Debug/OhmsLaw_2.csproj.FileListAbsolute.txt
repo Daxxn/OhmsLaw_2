@@ -12,3 +12,10 @@ C:\Users\Daxxn\source\repos\C# Ohms Law\OhmsLaw_2\OhmsLaw_2\obj\Debug\OhmsLaw_2.
 C:\Users\Daxxn\source\repos\C# Ohms Law\OhmsLaw_2\OhmsLaw_2\obj\Debug\OhmsLaw_2.csproj.CoreCompileInputs.cache
 C:\Users\Daxxn\source\repos\C# Ohms Law\OhmsLaw_2\OhmsLaw_2\obj\Debug\OhmsLaw_2.exe
 C:\Users\Daxxn\source\repos\C# Ohms Law\OhmsLaw_2\OhmsLaw_2\obj\Debug\OhmsLaw_2.pdb
+C:\Users\Cody\Documents\GitHub\OhmsLaw_2\OhmsLaw_2\bin\Debug\OhmsLaw_2.exe.config
+C:\Users\Cody\Documents\GitHub\OhmsLaw_2\OhmsLaw_2\bin\Debug\OhmsLaw_2.exe
+C:\Users\Cody\Documents\GitHub\OhmsLaw_2\OhmsLaw_2\bin\Debug\OhmsLaw_2.pdb
+C:\Users\Cody\Documents\GitHub\OhmsLaw_2\OhmsLaw_2\obj\Debug\OhmsLaw_2.csprojAssemblyReference.cache
+C:\Users\Cody\Documents\GitHub\OhmsLaw_2\OhmsLaw_2\obj\Debug\OhmsLaw_2.csproj.CoreCompileInputs.cache
+C:\Users\Cody\Documents\GitHub\OhmsLaw_2\OhmsLaw_2\obj\Debug\OhmsLaw_2.exe
+C:\Users\Cody\Documents\GitHub\OhmsLaw_2\OhmsLaw_2\obj\Debug\OhmsLaw_2.pdb

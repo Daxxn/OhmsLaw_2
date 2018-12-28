@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OhmsLaw_2
 {
+    /* Not goin to use this. Just for reference.
     class Connections<TElementIN, TElement, TElementOUT> : Element
     {
         public TElementIN ElmIN { get; set; }
@@ -24,5 +25,5 @@ namespace OhmsLaw_2
             ElmBase = baseElm;
             ElmOUT = elmOUT;
         }
-    }
+    }*/
 }

@@ -8,9 +8,6 @@ namespace OhmsLaw_2
 {
     class Wire : Element
     {
-        //Point pointIN;
-        //Point pointOUT;
-
         //Connections<Element, Element, Element> connections;
 
         public Wire() { }
@@ -18,9 +15,16 @@ namespace OhmsLaw_2
         {
             pointIN = new Point(YposIN, XposIN);
             pointOUT = new Point(YposOUT, XposOUT);
-            allWires.Add(this);
-            allElements.Add(this);
-            Connections = new Connections<Element, Element, Element>(this);
+            //allWires.Add(this);
+            //allElements.Add(this);
+            //Connections = new Connections<Element, Element, Element>(this);
+        }
+
+        public static void NewWire(int XposIN, int YposIN, int XposOUT, int YposOUT)
+        {
+            Wire newWire = new Wire(XposIN, YposIN, XposOUT, YposOUT);
+            Element.allElements.Add(newWire);
+            Element.allWires.Add(newWire);
         }
     }
 }

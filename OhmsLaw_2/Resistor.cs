@@ -11,9 +11,6 @@ namespace OhmsLaw_2
         private double resistance;
         private double branchRes { get; set; }
 
-        //Point pointIN;
-        //Point pointOUT;
-
         //public Connections<Element, Element, Element> connections;
         
         public Resistor(string name, double resistance, int XposIN, int YposIN, int XposOUT, int YposOUT)
@@ -22,9 +19,9 @@ namespace OhmsLaw_2
             Resistance = resistance;
             pointIN = new Point(YposIN, XposIN);
             pointOUT = new Point(YposOUT, XposOUT);
-            allResistors.Add(this);
-            allElements.Add(this);
-            Connections = new Connections<Element, Element, Element>(this);
+            //allResistors.Add(this);
+            //allElements.Add(this);
+            //Connections = new Connections<Element, Element, Element>(this);
         }
         
         // Properties :
@@ -42,6 +39,13 @@ namespace OhmsLaw_2
                     Console.WriteLine("ERROR : this is not a number.");
                 }
             }
+        }
+
+        public static void NewResistor(string name, double resistance, int XposIN, int YposIN, int XposOUT, int YposOUT)
+        {
+            Resistor newResistor = new Resistor(name, resistance, XposIN, YposIN, XposOUT, YposOUT);
+            Element.allElements.Add(newResistor);
+            Element.allResistors.Add(newResistor);
         }
         
         // non-static Methods :
@@ -71,5 +75,6 @@ namespace OhmsLaw_2
                 if(allElements[i].Points == this)
             }
         }*/
+
     }
 }

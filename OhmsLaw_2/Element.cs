@@ -18,7 +18,10 @@ namespace OhmsLaw_2
         protected Point pointIN;
         protected Point pointOUT;
 
-        protected Connections<Element, Element, Element> Connections { get; set; }
+        // Instead of a set 3 dimentional dict, im using a 2D dict with a list controlling it.
+        //protected Connections<Element, Element, Element> Connections { get; set; }
+        // This should make connections a little more clear.
+        protected List<Connection<Element, Element>> Connections { get; set; }
         
         public static void FindPrevious()
         {
@@ -29,7 +32,7 @@ namespace OhmsLaw_2
                 {
                     if(elm.pointIN.Points == check.pointOUT.Points)
                     {
-                        elm.Connections.ElmIN = check;
+                        //elm.Connections.ElmIN = check;
                     }
                 }
 
@@ -42,5 +45,7 @@ namespace OhmsLaw_2
                 iterator++;*/
             }
         }
+
+
     }
 }

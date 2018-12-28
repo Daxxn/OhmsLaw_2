@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="Connections.cs" />
     <Compile Include="Element.cs" />
     <Compile Include="Point.cs" />

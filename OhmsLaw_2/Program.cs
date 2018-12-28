@@ -12,66 +12,167 @@ namespace OhmsLaw_2
 
         static void Main(string[] args)
         {
-            #region Instance Creation
-            //int numOfResistors = 0;
-            //NewResistor(out Element.allResistors, numOfResistors);
-            Source V1 = new Source("V1", 12,  0, 0,   2, 0);
+            // set to true to include console inputs;
+            bool testingInput = true;
 
-            Resistor R1 = new Resistor("R1", 2,  2, 0,   2, 2);
-            Resistor R2 = new Resistor("R2", 4,  2, 2,   1, 2);
-            Resistor R3 = new Resistor("R3", 6,  1, 2,   1, 1);
-            Resistor R4 = new Resistor("R4", 6,  0, 2,   0, 0);
-            
-            Wire W1 = new Wire(0, 1, 0, 0);
-            Wire W2 = new Wire(1, 2, 0, 2);
-            Wire W3 = new Wire(1, 1, 0, 1);
-            #endregion
+            if(testingInput == true)
+            {
+                ConsoleInputsMain();
+            }
+            else
+            {
+                #region
+                //int numOfResistors = 0;
+                //NewResistor(out Element.allResistors, numOfResistors);
+                Source V1 = new Source("V1", 12, 0, 0, 2, 0);
 
+                Resistor R1 = new Resistor("R1", 2, 2, 0, 2, 2);
+                Resistor R2 = new Resistor("R2", 4, 2, 2, 1, 2);
+                Resistor R3 = new Resistor("R3", 6, 1, 2, 1, 1);
+                Resistor R4 = new Resistor("R4", 6, 0, 2, 0, 0);
+
+                Wire W1 = new Wire(0, 1, 0, 0);
+                Wire W2 = new Wire(1, 2, 0, 2);
+                Wire W3 = new Wire(1, 1, 0, 1);
+                #endregion
+            }
             Element.FindPrevious();
 
-            R1.FindSeries(Element.allResistors);
+            //R1.FindSeries(Element.allResistors);
         }
 
-        public static void NewResistor(out List<Resistor> allResistors, int numOfResistors)
+        public static void ConsoleInputsMain()
         {
-            List<Resistor> Resistors = new List<Resistor>();
-            switch (numOfResistors)
+            bool newElm = true;
+            while (newElm)
             {
-                default:
-                    Console.WriteLine("No resistors specified");
-                    Resistors.Add(null);
-                    break;
-                case 1:
-                    Resistor R1 = new Resistor("R1", 2, 0, 1, 1, 1);
-                    Resistors.Add(R1);
-                    break;
-                case 2:
-                    Resistor R2 = new Resistor("R1", 2, 0, 1, 1, 1);
-                    Resistor R3 = new Resistor("R2", 4, 1, 1, 1, 0);
-                    Resistors.Add(R2);
-                    Resistors.Add(R3);
-                    break;
+                Console.WriteLine("New element?");
+                string input = Console.ReadLine();
+                if (input == "y" || input == "Y")
+                {
+                    newElm = true;
+                    NewElement();
+                }
+                else
+                {
+                    newElm = false;
+                }
             }
-            allResistors = Resistors;
         }
 
-        public static void NewSources(out List<Source> allSources, int numOfSources)
+        public static void NewElement()
         {
-            List<Source> Sources = new List<Source>();
-            switch (numOfSources)
+            string name;
+            double value;
+            int XposI;
+            int YposI;
+            int XposO;
+            int YposO;
+
+            Console.WriteLine("Source or Resistor?");
+            string input = Console.ReadLine();
+            if (input.ToLower().Contains("c") || input.ToLower() == "s")
             {
-                default:
-                    Console.WriteLine("No Sources specified.");
-                    break;
-                case 1:
-                    Source V1 = new Source("V1", 12, 0, 0, 0, 1);
-                    break;
-                case 2:
-                    Source V2 = new Source("V1", 12, 0, 0, 0, 1);
-                    Source V3 = new Source("V2", 12, 0, 1, 0, 2);
-                    break;
+                Console.WriteLine("Source name?");
+                name = Console.ReadLine();
+
+                Console.WriteLine("Source voltage?");
+                input = Console.ReadLine();
+                value = Double.Parse(input);
+
+                Console.WriteLine("Point in?");
+                // eventually this will be X,Y and ill parse it down.
+                Console.WriteLine("X Position?");
+                input = Console.ReadLine();
+                XposI = Int32.Parse(input);
+
+                Console.WriteLine("Point in?");
+                // And do better error correction. =\
+                Console.WriteLine("Y Position?");
+                input = Console.ReadLine();
+                YposI = Int32.Parse(input);
+
+                Console.WriteLine("Point out?");
+                // this should work,
+                Console.WriteLine("X Position?");
+                input = Console.ReadLine();
+                XposO = Int32.Parse(input);
+
+                Console.WriteLine("Point out?");
+                // for the momoent.
+                Console.WriteLine("Y Position?");
+                input = Console.ReadLine();
+                YposO = Int32.Parse(input);
+
+                Source.NewSource(name, value, YposI, XposI, YposO, XposO);
             }
-            allSources = Sources;
+            else if(input.ToLower().Contains("res"))
+            {
+                Console.WriteLine("Resistor name?");
+                name = Console.ReadLine();
+
+                Console.WriteLine("Resistance?");
+                input = Console.ReadLine();
+                value = Double.Parse(input);
+
+                Console.WriteLine("Point in?");
+                // eventually this will be X,Y and ill parse it down.
+                Console.WriteLine("X Position?");
+                input = Console.ReadLine();
+                XposI = Int32.Parse(input);
+
+                Console.WriteLine("Point in?");
+                // And do better error correction. =\
+                Console.WriteLine("Y Position?");
+                input = Console.ReadLine();
+                YposI = Int32.Parse(input);
+
+                Console.WriteLine("Point out?");
+                // this should work,
+                Console.WriteLine("X Position?");
+                input = Console.ReadLine();
+                XposO = Int32.Parse(input);
+
+                Console.WriteLine("Point out?");
+                // for the momoent.
+                Console.WriteLine("Y Position?");
+                input = Console.ReadLine();
+                YposO = Int32.Parse(input);
+
+                Resistor.NewResistor(name, value, YposI, XposI, YposO, XposO);
+            }
+            else if (input.ToLower().Contains("wir"))
+            {
+                Console.WriteLine("Point in?");
+                // eventually this will be X,Y and ill parse it down.
+                Console.WriteLine("X Position?");
+                input = Console.ReadLine();
+                XposI = Int32.Parse(input);
+
+                Console.WriteLine("Point in?");
+                // And do better error correction. =\
+                Console.WriteLine("Y Position?");
+                input = Console.ReadLine();
+                YposI = Int32.Parse(input);
+
+                Console.WriteLine("Point out?");
+                // this should work,
+                Console.WriteLine("X Position?");
+                input = Console.ReadLine();
+                XposO = Int32.Parse(input);
+
+                Console.WriteLine("Point out?");
+                // for the momoent.
+                Console.WriteLine("Y Position?");
+                input = Console.ReadLine();
+                YposO = Int32.Parse(input);
+
+                Wire.NewWire(YposI, XposI, YposO, XposO);
+            }
+            else
+            {
+                Console.WriteLine("Not a valid input..");
+            }
         }
     }
 }
