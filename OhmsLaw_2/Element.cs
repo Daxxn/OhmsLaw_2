@@ -38,6 +38,24 @@ namespace OhmsLaw_2
             }
         }
 
+        public static void FindNext()
+        {
+            foreach (var elm in allElements)
+            {
+                foreach (var check in allElements)
+                {
+                    if(elm.pointOUT.Points[0,0] == check.pointIN.Points[0,0] && elm.pointOUT.Points[0,1] == check.pointIN.Points[0, 1])
+                    {
+                        Element.SetConnection(elm, check);
+                    }
+                }
+            }
+        }
 
+        public static void SetConnection(Element elmBase, Element elmConn)
+        {
+            Connection<Element, Element> connect = new Connection<Element, Element>(elmBase, elmConn);
+            elmBase.Connections.Add(connect);
+        }
     }
 }

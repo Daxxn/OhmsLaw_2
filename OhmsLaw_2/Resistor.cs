@@ -12,6 +12,7 @@ namespace OhmsLaw_2
         private double branchRes { get; set; }
 
         //public Connections<Element, Element, Element> connections;
+        public List<Connection<Element, Element>> allConnections { get; set; }
         
         public Resistor(string name, double resistance, int XposIN, int YposIN, int XposOUT, int YposOUT)
         {
@@ -75,6 +76,5 @@ namespace OhmsLaw_2
                 if(allElements[i].Points == this)
             }
         }*/
-
     }
 }

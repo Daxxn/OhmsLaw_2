@@ -15,5 +15,11 @@ namespace OhmsLaw_2
         {
             elmBase = elmB;
         }
+
+        public Connection(TElementBase elmB, TElementConn elmC)
+        {
+            elmBase = elmB;
+            elmConn = elmC;
+        }
     }
 }
