@@ -69,9 +69,9 @@ namespace OhmsLaw_2
             int XposO;
             int YposO;
 
-            Console.WriteLine("Source or Resistor?");
+            Console.WriteLine("Source, Resistor or Wire?");
             string input = Console.ReadLine();
-            if (input.ToLower().Contains("c") || input.ToLower() == "s")
+            if (input.ToLower().Contains("c") || input.ToLower() == "s" || input.ToLower().Contains("source"))
             {
                 Console.WriteLine("Source name?");
                 name = Console.ReadLine();
@@ -106,7 +106,7 @@ namespace OhmsLaw_2
 
                 Source.NewSource(name, value, YposI, XposI, YposO, XposO);
             }
-            else if(input.ToLower().Contains("res"))
+            else if(input.ToLower().Contains("res") || input.ToLower().Contains("resistor"))
             {
                 Console.WriteLine("Resistor name?");
                 name = Console.ReadLine();
@@ -141,7 +141,7 @@ namespace OhmsLaw_2
 
                 Resistor.NewResistor(name, value, YposI, XposI, YposO, XposO);
             }
-            else if (input.ToLower().Contains("wir"))
+            else if (input.ToLower().Contains("w") || input.ToLower().Contains("wire"))
             {
                 Console.WriteLine("Point in?");
                 // eventually this will be X,Y and ill parse it down.

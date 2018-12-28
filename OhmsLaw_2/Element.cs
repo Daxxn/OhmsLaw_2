@@ -35,14 +35,6 @@ namespace OhmsLaw_2
                         //elm.Connections.ElmIN = check;
                     }
                 }
-
-
-                /*
-                if (iterator - 1 > 0 && allElements[iterator - 1].pointOUT.Points == elm.pointIN.Points)
-                {
-                    elm.Connections.ElmIN = allElements[iterator - 1];
-                }
-                iterator++;*/
             }
         }
 
