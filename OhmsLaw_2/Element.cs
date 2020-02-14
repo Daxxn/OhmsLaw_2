@@ -21,7 +21,7 @@ namespace OhmsLaw_2
         // Instead of a set 3 dimentional dict, im using a 2D dict with a list controlling it.
         //protected Connections<Element, Element, Element> Connections { get; set; }
         // This should make connections a little more clear.
-        protected List<Connection<Element, Element>> Connections { get; set; }
+        protected List<Connection<Element, Element>> connections = new List<Connection<Element, Element>>();
         
         public static void FindPrevious()
         {
@@ -46,7 +46,8 @@ namespace OhmsLaw_2
                 {
                     if(elm.pointOUT.Points[0,0] == check.pointIN.Points[0,0] && elm.pointOUT.Points[0,1] == check.pointIN.Points[0, 1])
                     {
-                        Element.SetConnection(elm, check);
+                        Connection<Element, Element> connect = new Connection<Element, Element>(elm, check);
+                        elm.connections.Add(connect);
                     }
                 }
             }
@@ -55,7 +56,7 @@ namespace OhmsLaw_2
         public static void SetConnection(Element elmBase, Element elmConn)
         {
             Connection<Element, Element> connect = new Connection<Element, Element>(elmBase, elmConn);
-            elmBase.Connections.Add(connect);
+            elmBase.connections.Add(connect);
         }
     }
 }

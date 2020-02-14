@@ -9,7 +9,7 @@ namespace OhmsLaw_2
     class Source : Element
     {
         private double sourceVoltage;
-        
+
         public Source(string name, double voltage, int XposIN, int YposIN, int XposOUT, int YposOUT)
         {
             Name = name;

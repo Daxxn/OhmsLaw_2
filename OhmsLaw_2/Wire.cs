@@ -8,7 +8,7 @@ namespace OhmsLaw_2
 {
     class Wire : Element
     {
-        //Connections<Element, Element, Element> connections;
+        public List<Connection<Element, Element>> allConnections { get; set; }
 
         public Wire() { }
         public Wire(int XposIN, int YposIN, int XposOUT, int YposOUT)
